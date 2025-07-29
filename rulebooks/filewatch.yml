@@ -1,13 +1,13 @@
 ---
 - name: Monitor critical configuration file
-  hosts: localhost
+  hosts: localhost 
   sources:
     - name: File watch
       ansible.eda.file_watch:
         path: "/tmp/new-files"
         recursive: true
   rules:
-    - name: Trigger playbook on config change
+    - name: DirModifiedEvent 
       condition: event.type == "DirModifiedEvent"
       action:
         debug:
