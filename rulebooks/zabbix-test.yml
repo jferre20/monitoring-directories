@@ -9,4 +9,4 @@
     - name: debug
       condition: event.payload is defined
       action:
-        debug: "{{ event.payload }}"
+        debug:
