@@ -1,12 +1,18 @@
 ---
-- name: Zabbix test rulebook
-  hosts: all
+- name: Listen for events on a webhook
+  hosts: workstation.lab.example.com
+
   sources:
-    - ansible.eda.webhook:
+    - name: Match events posted to port 5000
+      ansible.eda.webhook:
         host: 0.0.0.0
-        port: 5001
+        port: 5000
+
   rules:
-    - name: debug
+    - name: Print output of event.payload
       condition: event.payload is defined
       action:
-        debug:
+        run_module:
+          name: ansible.builtin.debug
+          module_args:
+            msg: "{{ event.payload }}"
