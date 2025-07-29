@@ -1,6 +1,6 @@
 ---
 - name: Listen for events on a webhook
-  hosts: workstation.lab.example.com
+  hosts: all 
 
   sources:
     - name: Match events posted to port 5000
