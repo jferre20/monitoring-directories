@@ -9,6 +9,8 @@
     - name: Run ls
       condition: event.payload is defined
       action:
+        #debug: 
+        #  msg: "{{ event.payload.path_file }} {{ event.payload.server }}"
         #run_playbook:
         #  name: playbooks/print-hostname.yml
         run_job_template:
@@ -16,4 +18,5 @@
           organization: Default
           extra_vars:
             path_file: "{{ event.payload.path_file }}"
-            server: "{{ event.payload.server }}"
+          job_args:
+            limit: "{{ event.payload.server }}"
