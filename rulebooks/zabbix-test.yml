@@ -9,5 +9,5 @@
     - name: debug
       condition: event.payload is defined
       action:
-        run_playbook:
-          name: playbooks/print-hostname.yml
+        run_job_template:
+          name: EDA Test
