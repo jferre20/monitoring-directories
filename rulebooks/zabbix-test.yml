@@ -13,4 +13,5 @@
           name: EDA Test
           organization: Default
           extra_vars:
-            path_file: "{{ event.payload.path_file }}"
+            path_file: "{{ item }}"
+          with_items: "{{ event.payload.path_file }}"
