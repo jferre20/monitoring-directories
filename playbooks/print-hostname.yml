@@ -2,8 +2,8 @@
 - hosts: all
   gather_facts: false
   tasks:
-    - shell: hostname
-      register: name_machine
+    - shell: "ls -l {{ path_file }}"
+      register: path_file_stat
 
     - debug:
-        var: name_machine.stdout
+        var: path_file_stat.stdout

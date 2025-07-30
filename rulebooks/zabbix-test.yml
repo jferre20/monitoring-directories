@@ -12,3 +12,5 @@
         run_job_template:
           name: EDA Test
           organization: Default
+          extra_vars:
+            path_file: "{{ event.payload.path_file }}"
