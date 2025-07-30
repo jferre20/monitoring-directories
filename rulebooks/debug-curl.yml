@@ -10,4 +10,4 @@
       condition: event.payload is defined
       action:
         debug: 
-          msg: "{{ event.payload.path_file }}"
+          msg: "{{ event.payload.path_files }}"
