@@ -1,6 +1,6 @@
 ---
 - name: Monitor critical configuration file
-  hosts: localhost 
+  hosts: zbx01 
   sources:
     - name: File watch
       ansible.eda.file_watch:

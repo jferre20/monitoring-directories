@@ -1,9 +1,0 @@
----
-- hosts: all
-  gather_facts: false
-  tasks:
-    - shell: "ls -l {{ path_file }}"
-      register: path_file_stat
-
-    - debug:
-        var: path_file_stat.stdout

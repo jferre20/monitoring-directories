@@ -6,12 +6,14 @@
         host: 0.0.0.0
         port: 5001
   rules:
-    - name: debug
+    - name: Run ls
       condition: event.payload is defined
       action:
+        #run_playbook:
+        #  name: playbooks/print-hostname.yml
         run_job_template:
           name: EDA Test
           organization: Default
           extra_vars:
-            path_file: "{{ item }}"
-          with_items: "{{ event.payload.path_file }}"
+            path_file: "{{ event.payload.path_file }}"
+            server: "{{ event.payload.server }}"
