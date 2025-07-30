@@ -1,7 +1,0 @@
----
-- hosts: all
-  gather_facts: false
-  tasks:
-    - file: 
-        path: "{{ path_file }}"
-        state: absent

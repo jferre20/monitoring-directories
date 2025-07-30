@@ -1,0 +1,16 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+    - name: Copy files to /tmp/files-moved
+      ansible.builtin.copy:
+        src: /tmp/new-files/
+        remote_src: true
+        dest: /tmp/files-moved
+        mode: "0644"
+        unsafe_writes: no
+
+    - name: Remove files from source directory
+      ansible.builtin.file:
+        path: /tmp/new-files/*
+        state: absent
