@@ -9,4 +9,5 @@
     - name: debug
       condition: event.payload is defined
       action:
-        debug:
+        run_playbook:
+          name: playbooks/print-hostname.yml
