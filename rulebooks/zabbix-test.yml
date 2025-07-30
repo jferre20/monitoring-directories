@@ -9,6 +9,6 @@
     - name: debug
       condition: event.payload is defined
       action:
-        - run_job_template:
-            name: EDA Test
-            organization: Default
+        run_job_template:
+          name: EDA Test
+          organization: Default
