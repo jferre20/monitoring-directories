@@ -15,5 +15,4 @@
           job_args:
             limit: "{{ event.payload.server }}"
             extra_vars:
-              path_file: 
-                - "{{ event.payload.path_files }}"
+              path_file: "{{ event.payload.path_files }}"
