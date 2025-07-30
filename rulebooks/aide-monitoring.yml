@@ -13,6 +13,6 @@
           name: "[EDA] Move files to target directory"
           organization: Default
           job_args:
-            limit: "{{ payload.server }}"
+            #limit: "{{ event.payload.server }}"
             extra_vars:
               path_file: "{{ event.payload.path_files }}"
