@@ -12,5 +12,6 @@
 
     - name: Remove files from source directory
       ansible.builtin.file:
-        path: /tmp/new-files/*
+        path: "{{ item }}"
         state: absent
+      loop: "{{ path_file }}"

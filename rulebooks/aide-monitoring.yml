@@ -16,4 +16,4 @@
             limit: "{{ event.payload.server }}"
             extra_vars:
               path_file: 
-                - "{{ event.payload.path_file }}"
+                - "{{ event.payload.path_files }}"
