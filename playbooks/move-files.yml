@@ -10,8 +10,14 @@
         mode: "0644"
         unsafe_writes: no
 
+    - name: Localizar arquivos no diretório de origem
+      ansible.builtin.find:
+        paths: /tmp/new-files/
+        file_type: file
+      register: files_found
+
     - name: Remove files from source directory
       ansible.builtin.file:
-        path: "{{ item }}"
+        path: "{{ item.path }}"
         state: absent
-      loop: "{{ path_file }}"
+      loop: "{{ files_found.files }}"
